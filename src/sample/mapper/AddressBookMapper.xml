@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="sample.mapper.AddressBookMapper">
+
+    <insert id="insertAddressBook">
+        insert into ADDRESSBOOK(name,firewallid) values(#{name},#{firewallid})
+    </insert>
+    <update id="update">
+        update ADDRESSBOOK set name=#{name},firewallid=#{firewallid} where id=#{id}
+    </update>
+    <delete id="delete">
+        delete from ADDRESSBOOK where id = #{id}
+    </delete>
+    <select id="getAllAddressBook" resultType="sample.bean.AddressBookPerson">
+        select * from ADDRESSBOOK where FIREWALLID=#{firewallId}
+    </select>
+    <select id="getAddressBookByid" resultType="sample.bean.AddressBook">
+        select * from ADDRESSBOOK where id=#{id}
+    </select>
+</mapper>

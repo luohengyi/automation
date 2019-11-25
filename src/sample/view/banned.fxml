@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
+
+<GridPane xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.controller.BannedController">
+  <columnConstraints>
+    <ColumnConstraints hgrow="SOMETIMES" maxWidth="196.0" minWidth="10.0" percentWidth="25.0" prefWidth="122.0" />
+      <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" maxWidth="264.0" minWidth="10.0" prefWidth="83.0" />
+      <ColumnConstraints hgrow="SOMETIMES" maxWidth="316.0" minWidth="10.0" percentWidth="25.0" prefWidth="151.0" />
+      <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" maxWidth="316.0" minWidth="10.0" prefWidth="89.0" />
+      <ColumnConstraints hgrow="SOMETIMES" maxWidth="316.0" minWidth="10.0" percentWidth="25.0" prefWidth="155.0" />
+  </columnConstraints>
+  <rowConstraints>
+    <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+  </rowConstraints>
+   <children>
+      <TableView fx:id="firewallTable" prefHeight="200.0" prefWidth="200.0">
+        <columns>
+          <TableColumn fx:id="firewallName" minWidth="-1.0" prefWidth="171.0" text="防火墙名称" />
+        </columns>
+      </TableView>
+      <TableView fx:id="addrTable" prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="2">
+        <columns>
+          <TableColumn fx:id="addrName" prefWidth="171.0" text="地址薄" />
+        </columns>
+      </TableView>
+      <TableView fx:id="ipTable" prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="4">
+        <columns>
+          <TableColumn fx:id="ip" prefWidth="154.0" text="ip" />
+        </columns>
+      </TableView>
+      <ImageView fitHeight="30.0" fitWidth="39.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="1">
+         <image>
+            <Image url="@../../resource/img/箭头.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="32.0" fitWidth="39.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="3">
+         <image>
+            <Image url="@../../resource/img/箭头.png" />
+         </image>
+      </ImageView>
+   </children>
+</GridPane>
