@@ -14,6 +14,7 @@ import javafx.scene.layout.HBox;
 import sample.bean.Firewall;
 import sample.bean.FirewallPerson;
 import sample.service.FirewallService;
+import sample.util.alert.MyAlert;
 import sample.util.UrlRule;
 
 import java.util.List;

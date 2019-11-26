@@ -14,4 +14,5 @@ public interface IpListMapper {
 
     List<IpPerson> getIpsByAddrId(int addrId);
 
+    boolean insertIp(IpPerson ipPerson);
 }

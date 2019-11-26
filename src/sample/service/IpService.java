@@ -20,4 +20,8 @@ public class IpService {
     public List<IpPerson> getIpListByAddrId(int addrId) {
         return ipListMapper.getIpsByAddrId(addrId);
     }
+
+    public boolean addIp(IpPerson ipPerson) {
+        return ipListMapper.insertIp(ipPerson);
+    }
 }

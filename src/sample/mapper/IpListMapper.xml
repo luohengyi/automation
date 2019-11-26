@@ -3,6 +3,9 @@
         PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="sample.mapper.IpListMapper">
+    <insert id="insertIp">
+        insert into IPLIST(IP,ADDRID) values (#{ip},#{addrId})
+    </insert>
 
 
     <select id="getIpsByAddrId" resultType="sample.bean.IpPerson">
