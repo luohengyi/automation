@@ -24,4 +24,9 @@ public class IpService {
     public boolean addIp(IpPerson ipPerson) {
         return ipListMapper.insertIp(ipPerson);
     }
+
+    public boolean deleteByAddrId(String ip) {
+        return ipListMapper.deleteByAddrId(ip);
+    }
+
 }
