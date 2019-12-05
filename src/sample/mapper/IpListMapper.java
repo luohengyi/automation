@@ -1,5 +1,6 @@
 package sample.mapper;
 
+import org.apache.ibatis.annotations.Param;
 import sample.bean.IpPerson;
 
 import java.util.List;
@@ -17,5 +18,7 @@ public interface IpListMapper {
     boolean insertIp(IpPerson ipPerson);
 
     boolean deleteByAddrId(String addrId);
+
+    IpPerson getIpByNameAndAddrId(@Param("name") String name, @Param("addrId") int addrId);
 
 }

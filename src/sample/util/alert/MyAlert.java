@@ -14,10 +14,15 @@ import java.util.Optional;
 public class MyAlert {
 
     public static void msg(String info) {
+        msgRsAlert(info);
+    }
+
+    public static Alert msgRsAlert(String info) {
         Alert alert = new Alert(Alert.AlertType.INFORMATION);
         alert.titleProperty().set("信息");
         alert.headerTextProperty().set(info);
         alert.showAndWait();
+        return alert;
     }
 
     public static void TextAlert(AlertTestRes alertTestRes) {

@@ -7,7 +7,7 @@
         insert into FIREWALL(name,ip,PORT,username,password) values (#{name},#{ip},#{port},#{username},#{password})
     </insert>
     <update id="edit">
-        update FIREWALL set NAME=#{name},ip=#{ip},username=#{username},password=#{password} where id = #{id}
+        update FIREWALL set NAME=#{name},ip=#{ip},username=#{username},password=#{password},port=#{port} where id = #{id}
     </update>
     <delete id="delete">
         delete from FIREWALL where id = #{id}

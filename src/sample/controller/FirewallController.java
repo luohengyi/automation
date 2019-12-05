@@ -11,9 +11,12 @@ import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.layout.GridPane;
 import javafx.beans.property.ReadOnlyDoubleWrapper;
 import javafx.scene.layout.HBox;
+import javafx.stage.Stage;
 import sample.bean.Firewall;
 import sample.bean.FirewallPerson;
 import sample.service.FirewallService;
+import sample.service.HillStoneRestfulClient;
+import sample.util.ProgressFrom;
 import sample.util.alert.MyAlert;
 import sample.util.UrlRule;
 
@@ -61,6 +64,8 @@ public class FirewallController {
 
     @FXML
     private Tab listTab;
+    @FXML
+    private Button addFirewaTest;
 
     @FXML
     public void initialize() {
@@ -74,10 +79,8 @@ public class FirewallController {
             StringProperty ports = port.textProperty();
             StringProperty usernames = username.textProperty();
             StringProperty passwords = password.textProperty();
-
             Firewall firewall = new Firewall(0, name.getValue(), ips.getValue(), Integer.parseInt(ports.getValue().isEmpty() ? "0" : ports.getValue()), usernames.getValue(), passwords.getValue());
             boolean insert = firewallService.add(firewall);
-
             //维护输入框
             if (insert) {
                 name.set("");
@@ -89,6 +92,30 @@ public class FirewallController {
             MyAlert.msg(insert ? "添加成功！" : firewallService.getError());
             //维护列表
             initTableData();
+        });
+        //防火墙连接测试
+        addFirewaTest.setOnAction(event -> {
+            String portText = port.getText();
+            StringProperty name = firewallName.textProperty();
+            StringProperty ips = ip.textProperty();
+            StringProperty ports = port.textProperty();
+            StringProperty usernames = username.textProperty();
+            StringProperty passwords = password.textProperty();
+            Firewall firewall = new Firewall(0, name.getValue(), ips.getValue(), Integer.parseInt(ports.getValue().isEmpty() ? "0" : ports.getValue()), usernames.getValue(), passwords.getValue());
+            HillStoneRestfulClient hillStoneRestfulClient =  new HillStoneRestfulClient(firewall);
+
+//            ProgressFrom progressFrom = new ProgressFrom((Stage)rootLout.getScene().getWindow());
+//            progressFrom.activateProgressBar();
+
+            try {
+                hillStoneRestfulClient.login();
+//                progressFrom.cancelProgressBar();
+                MyAlert.msgRsAlert("测试成功");
+            } catch (Exception e) {
+                String message = e.getMessage();
+//                progressFrom.cancelProgressBar();
+                MyAlert.msgRsAlert(message);
+            }
         });
 
     }

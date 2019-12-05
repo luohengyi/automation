@@ -18,11 +18,10 @@ public class Firewall {
     }
 
     /**
-     *
-     * @param id id
-     * @param name name
-     * @param ip ip
-     * @param port  port
+     * @param id       id
+     * @param name     name
+     * @param ip       ip
+     * @param port     port
      * @param username username
      * @param password password
      */
@@ -81,6 +80,15 @@ public class Firewall {
 
     public void setPassword(String password) {
         this.password = password;
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        Firewall to = (Firewall) obj;
+        if (to.getUsername().equals(username) && to.getPassword().equals(password)) {
+            return true;
+        }
+        return false;
     }
 
     @Override

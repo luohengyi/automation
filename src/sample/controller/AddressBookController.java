@@ -73,6 +73,8 @@ public class AddressBookController {
     }
 
     private void initDataTable(){
+
+
         ObservableList observableList = FXCollections.observableArrayList();
         List<AddressBookPerson> dataList = addressBookService.getFirewallAddressBook(firewallId.getValue());
         observableList.addAll(dataList);

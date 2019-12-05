@@ -16,4 +16,8 @@
         delete from IPLIST where IP = #{ip}
     </delete>
 
+    <select id="getIpByNameAndAddrId" resultType="sample.bean.IpPerson">
+        select  * from IPLIST where IP=#{name} and ADDRID = #{addrId}
+    </select>
+
 </mapper>

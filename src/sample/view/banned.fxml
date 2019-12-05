@@ -8,7 +8,7 @@
 <?import javafx.scene.layout.GridPane?>
 <?import javafx.scene.layout.RowConstraints?>
 
-<GridPane xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.controller.BannedController">
+<GridPane fx:id="rootLout" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.controller.BannedController">
   <columnConstraints>
     <ColumnConstraints hgrow="SOMETIMES" maxWidth="196.0" minWidth="10.0" percentWidth="25.0" prefWidth="122.0" />
       <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" maxWidth="264.0" minWidth="10.0" prefWidth="83.0" />
@@ -20,12 +20,12 @@
     <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
   </rowConstraints>
    <children>
-      <TableView fx:id="firewallTable" prefHeight="200.0" prefWidth="200.0">
+      <TableView fx:id="firewallTable">
         <columns>
           <TableColumn fx:id="firewallName" minWidth="-1.0" prefWidth="171.0" text="防火墙名称" />
         </columns>
       </TableView>
-      <TableView fx:id="addrTable" prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="2">
+      <TableView fx:id="addrTable" GridPane.columnIndex="2">
         <columns>
           <TableColumn fx:id="addrName" prefWidth="171.0" text="地址薄" />
         </columns>
