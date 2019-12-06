@@ -145,7 +145,7 @@ public class FirewallController {
                             boolean del = firewallService.delete(dataList.get(id).getId());
 
                             initTableData();
-                            MyAlert.msg(del ? "删除成功！" : "删除失败！");
+                            MyAlert.msg(del ? "删除成功！" : "删除失败！"+firewallService.getError());
                             //维护
                         });
                         edit.setId(getIndex() + "");

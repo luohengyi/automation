@@ -1,7 +1,9 @@
 package sample.service;
 
+import sample.bean.AddressBookPerson;
 import sample.bean.Firewall;
 import sample.bean.FirewallPerson;
+import sample.mapper.AddressBookMapper;
 import sample.mapper.TestMapper;
 import sample.util.SqlSessionFactoryUtil;
 
@@ -81,6 +83,12 @@ public class FirewallService extends Service {
      * @return boolean
      */
     public boolean delete(int id) {
+        AddressBookMapper addressBookMapper = SqlSessionFactoryUtil.getMapper(AddressBookMapper.class);
+        List<AddressBookPerson> allAddressBook = addressBookMapper.getAllAddressBook(id);
+        if ( allAddressBook.size() > 0) {
+            error="数据被占用！";
+            return false;
+        }
         return testMapper.delete(id);
     }
 
@@ -90,6 +98,6 @@ public class FirewallService extends Service {
 
 
     public boolean edit(Firewall firewall) {
-        return  testMapper.edit(firewall);
+        return testMapper.edit(firewall);
     }
 }

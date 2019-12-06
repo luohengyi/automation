@@ -2,15 +2,12 @@ package sample.controller;
 
 import javafx.beans.property.SimpleIntegerProperty;
 import javafx.fxml.FXML;
-import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.GridPane;
-import javafx.stage.Stage;
 import sample.bean.Firewall;
 import sample.service.FirewallService;
 import sample.service.HillStoneRestfulClient;
-import sample.util.ProgressFrom;
 import sample.util.UrlRule;
 import sample.util.alert.MyAlert;
 

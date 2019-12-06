@@ -3,7 +3,9 @@ package sample.service;
 import sample.bean.AddressBook;
 import sample.bean.AddressBookPerson;
 import sample.bean.Firewall;
+import sample.bean.IpPerson;
 import sample.mapper.AddressBookMapper;
+import sample.mapper.IpListMapper;
 import sample.util.SqlSessionFactoryUtil;
 
 import java.util.List;
@@ -50,6 +52,12 @@ public class AddressBookService extends Service {
     }
 
     public boolean remove(int id) {
+        IpListMapper mapper = SqlSessionFactoryUtil.getMapper(IpListMapper.class);
+        List<IpPerson> ipsByAddrId = mapper.getIpsByAddrId(id);
+        if (ipsByAddrId.size() > 0) {
+            error = "数据被占用！";
+            return false;
+        }
         return addressBookMapper.delete(id);
     }
 
@@ -60,7 +68,7 @@ public class AddressBookService extends Service {
 
     public boolean edit(AddressBook addressBook) {
         if (addressBook.getName().trim().equals("")) {
-            error="地址薄名称不能为空";
+            error = "地址薄名称不能为空";
             return false;
         }
         return addressBookMapper.update(addressBook);

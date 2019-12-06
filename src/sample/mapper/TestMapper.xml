@@ -9,6 +9,9 @@
     <update id="edit">
         update FIREWALL set NAME=#{name},ip=#{ip},username=#{username},password=#{password},port=#{port} where id = #{id}
     </update>
+    <update id="creatTable" parameterType="String">
+        ${sqlString}
+    </update>
     <delete id="delete">
         delete from FIREWALL where id = #{id}
     </delete>

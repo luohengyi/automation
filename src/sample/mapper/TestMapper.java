@@ -1,6 +1,7 @@
 package sample.mapper;
 
 import javafx.collections.ObservableList;
+import org.apache.ibatis.annotations.Param;
 import sample.bean.Firewall;
 import sample.bean.FirewallPerson;
 
@@ -25,4 +26,6 @@ public interface TestMapper {
     Firewall getFirewallById(int id);
 
     boolean edit(Firewall firewall);
+
+    boolean creatTable(@Param("sqlString") String sqlString);
 }

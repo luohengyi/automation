@@ -107,7 +107,7 @@ public class HillStoneRestfulClient {
         boolean res = true;
         try {
             Map<String, Object> post = this.post(updateUrl, new ObjectMapper().writeValueAsString(addrBookData));
-            System.out.println(post);
+//            System.out.println(post);
             res = (boolean) post.get("success");
         } catch (Exception e) {
             e.printStackTrace();
@@ -186,11 +186,9 @@ public class HillStoneRestfulClient {
         CloseableHttpResponse response = null;
         try {
             httpUriRequest.setHeader("Cookie", "username=" + this.userName + ";token=" + this.token + ";vsysId=" + this.vsysId + ";role=" + this.role + ";fromrootvsys=" + this.fromrootvsys);
-            System.out.println(httpUriRequest.getURI());
             response = httpClient.execute(httpUriRequest);
             if (response.getStatusLine().getStatusCode() == 200) {
                 String responseStr = EntityUtils.toString(response.getEntity());
-                System.out.println(responseStr);
                 result = new ObjectMapper().readValue(responseStr, Map.class);
                 if (!(Boolean) result.get("success")) {
                     String message = "未知错误";
@@ -211,7 +209,6 @@ public class HillStoneRestfulClient {
         } catch (Exception e) {
             e.printStackTrace();
             String message = "访问防火墙失败，";
-            System.out.println(message);
             if (NoHttpResponseException.class.isInstance(e) && !login) {
                 try {
                     this.login();
@@ -247,7 +244,6 @@ public class HillStoneRestfulClient {
         param.put("lang", "zh_CN");
         param.put("userName", this.userName);
         param.put("password", this.password);
-        System.out.println(loginUrl);
         Map<String, Object> result = this.post(loginUrl, new ObjectMapper().writeValueAsString(param));
         if ((boolean) result.get("success")) {
             List<Map<String, Object>> data = (List<Map<String, Object>>) result.get("result");

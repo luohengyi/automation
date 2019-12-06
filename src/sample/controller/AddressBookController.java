@@ -94,7 +94,7 @@ public class AddressBookController {
                             int id = Integer.parseInt(((Button) event.getSource()).getId());
                             boolean del = addressBookService.remove(dataList.get(id).getId());
                             initDataTable();
-                            MyAlert.msg(del?"删除成功！":"删除失败！");
+                            MyAlert.msg(del?"删除成功！":"删除失败！"+addressBookService.getError());
                         });
                         edit.setId(getIndex() + "");
                         edit.setOnAction(event -> {
