@@ -32,6 +32,9 @@ public class Main extends Application {
         TestMapper mapper = sqlSession.getMapper(TestMapper.class);
         try {
             List<FirewallPerson> dataList = mapper.getDataList();
+            if (dataList.size()>0){
+                System.out.println(123);
+            }
         }catch (Exception e){
             //处理数据表不存在
             String[] sqlFile = {"SELECT_t___FROM_FIREWALL_ADDRESSBOOK_t.sql","SELECT_t___FROM_FIREWALL_FIREWALL_t.sql",

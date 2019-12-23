@@ -1,6 +1,6 @@
 ----------------------------------------------------------------
-Fri Dec 06 15:03:24 CST 2019:
-Booting Derby version The Apache Software Foundation - Apache Derby - 10.13.1.1 - (1765088): instance a816c00e-016e-da05-3252-000005030180 
+Mon Dec 23 16:08:18 CST 2019:
+Booting Derby version The Apache Software Foundation - Apache Derby - 10.13.1.1 - (1765088): instance a816c00e-016f-31cc-ba39-0000050d2630 
 on database directory /Users/luohengyi/java/IdeaProjects/automation/db/firewall with class loader sun.misc.Launcher$AppClassLoader@135fbaa4 
 Loaded from file:/Users/luohengyi/java/IdeaProjects/automation/src/lib/derby-10.13.1.1.jar
 java.vendor=Oracle Corporation

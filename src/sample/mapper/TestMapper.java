@@ -17,7 +17,7 @@ import java.util.Map;
 
 public interface TestMapper {
 
-    List<FirewallPerson> getDataList();
+    List<FirewallPerson> getDataList()throws Exception;
 
     boolean insert(Firewall firewall);
 

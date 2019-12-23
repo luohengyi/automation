@@ -73,7 +73,13 @@ public class FirewallService extends Service {
      * @return List<FirewallPerson>
      */
     public List<FirewallPerson> getDataList() {
-        return testMapper.getDataList();
+        List<FirewallPerson> dataList = null;
+        try {
+            dataList = testMapper.getDataList();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return dataList;
     }
 
     /**
@@ -85,8 +91,8 @@ public class FirewallService extends Service {
     public boolean delete(int id) {
         AddressBookMapper addressBookMapper = SqlSessionFactoryUtil.getMapper(AddressBookMapper.class);
         List<AddressBookPerson> allAddressBook = addressBookMapper.getAllAddressBook(id);
-        if ( allAddressBook.size() > 0) {
-            error="数据被占用！";
+        if (allAddressBook.size() > 0) {
+            error = "数据被占用！";
             return false;
         }
         return testMapper.delete(id);

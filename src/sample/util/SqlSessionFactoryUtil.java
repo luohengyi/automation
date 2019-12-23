@@ -40,7 +40,7 @@ public class SqlSessionFactoryUtil {
 
 
     public static SqlSessionFactory getSqlSessionFactoryBean() {
-        String resource = "resource/mybatis-config.xml";
+        String resource = "mybatis-config.xml";
         InputStream inputStream = null;
         try {
             inputStream = Resources.getResourceAsStream(resource);

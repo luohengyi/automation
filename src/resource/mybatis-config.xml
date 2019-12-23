@@ -5,10 +5,10 @@
 
 <configuration>
     <properties resource="jdbc.properties"></properties>
-<!--    <settings>-->
-<!--        &lt;!&ndash;执行sql时将sql语句输出到控制台&ndash;&gt;-->
-<!--        <setting name="logImpl" value="STDOUT_LOGGING"/>-->
-<!--    </settings>-->
+    <settings>
+        <!--执行sql时将sql语句输出到控制台-->
+        <setting name="logImpl" value="STDOUT_LOGGING"/>
+    </settings>
 
     <environments default="development">
         <environment id="development">
