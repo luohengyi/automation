@@ -38,4 +38,8 @@ public class IpService extends Service {
         return ipListMapper.deleteByAddrId(ip);
     }
 
+    public List<IpPerson> search(){
+        return ipListMapper.search();
+    }
+
 }

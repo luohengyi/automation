@@ -43,6 +43,7 @@ public class UrlRule {
         Properties properties = new Properties();
         properties.load(resourceAsStream);
         String url =  properties.get(urlName).toString();
+        System.out.println(url);
         if (resourceAsStream != null)
             resourceAsStream.close();
         return url;

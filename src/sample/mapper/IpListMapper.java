@@ -21,4 +21,6 @@ public interface IpListMapper {
 
     IpPerson getIpByNameAndAddrId(@Param("name") String name, @Param("addrId") int addrId);
 
+    List<IpPerson> search();
+
 }

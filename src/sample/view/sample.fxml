@@ -25,7 +25,9 @@
                 <Menu mnemonicParsing="false" text="菜单">
                   <items>
                     <MenuItem fx:id="firewall" mnemonicParsing="false" text="防火墙" />
-                        <MenuItem fx:id="banned" mnemonicParsing="false" text="ip封禁" />
+                    <MenuItem fx:id="banned" mnemonicParsing="false" text="ip封禁" />
+                    <MenuItem fx:id="domain" mnemonicParsing="false" text="域名" />
+                    <MenuItem fx:id="domainip" mnemonicParsing="false" text="域名ip" />
                   </items>
                 </Menu>
               </menus>

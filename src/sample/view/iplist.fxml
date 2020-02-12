@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0"
+            prefWidth="600.0" fx:id="" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.controller.IpListController">
+    <children>
+        <Button layoutX="227.0" layoutY="27.0" mnemonicParsing="false" onMouseClicked="#search" text="搜索"/>
+        <TextField fx:id="search" layoutX="50.0" layoutY="27.0"/>
+        <TableView layoutY="67.0" prefHeight="333.0" prefWidth="600.0">
+            <columns>
+                <TableColumn fx:id="ip_id" prefWidth="200.0" text="ip_id"/>
+                <TableColumn fx:id="ip" minWidth="4.0" prefWidth="200.0" text="ip"/>
+                <TableColumn fx:id="ip_address" prefWidth="200.0" text="ip_address"/>
+            </columns>
+        </TableView>
+        <Label layoutX="14.0" layoutY="31.0" text="条件："/>
+    </children>
+</AnchorPane>

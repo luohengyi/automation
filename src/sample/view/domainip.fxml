@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
+
+<GridPane fx:id="rootLout" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.controller.DomainIpController">
+  <columnConstraints>
+    <ColumnConstraints hgrow="SOMETIMES" maxWidth="255.0" minWidth="10.0" percentWidth="25.0" prefWidth="255.0" />
+      <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" maxWidth="109.0" minWidth="0.0" prefWidth="0.0" />
+      <ColumnConstraints hgrow="SOMETIMES" maxWidth="316.0" minWidth="10.0" percentWidth="25.0" prefWidth="155.0" />
+  </columnConstraints>
+  <rowConstraints>
+    <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+  </rowConstraints>
+   <children>
+      <TableView fx:id="domainTable">
+        <columns>
+          <TableColumn fx:id="domainName" minWidth="-1.0" prefWidth="171.0" text="域名名称" />
+        </columns>
+      </TableView>
+      <TableView fx:id="ipTable" prefHeight="500.0" prefWidth="299.0" GridPane.columnIndex="2">
+        <columns>
+          <TableColumn fx:id="ip" prefWidth="158.0" text="ip" />
+            <TableColumn fx:id="ipDelete" prefWidth="78.0" text="操作" />
+        </columns>
+      </TableView>
+      <ImageView fitHeight="30.0" fitWidth="39.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="1">
+         <image>
+            <Image url="@../../resource/img/箭头.png" />
+         </image>
+      </ImageView>
+   </children>
+</GridPane>
